@@ -17,6 +17,7 @@ extension ExampleSwiftUIView: View {
     VStack(spacing: 24) {
       rectangle
       rectangleWithElements
+      circleWithElements
     }
   }
   
@@ -48,10 +49,40 @@ extension ExampleSwiftUIView: View {
       }
       .frame(width: 100, height: 100)
   }
+  
+  var circleWithElements: some View {
+    Circle()
+      .elements { index, lastPoint, element in
+
+        if case let Path.Element.curve(to: point, control1: control1, control2: control2) = element {
+          
+          let scaledLast = lastPoint * CGSize(width: 100, height: 100)
+          let scaledPoint = point * CGSize(width: 100, height: 100)
+          let scaledControl1 = control1 * CGSize(width: 100, height: 100)
+          let scaledControl2 = control2 * CGSize(width: 100, height: 100)
+          
+          Path { path in
+            path.move(to: scaledLast)
+            path.addCurve(to: scaledPoint, control1: scaledControl1, control2: scaledControl2)
+          }
+          .trimmedPath(from: 0.1, to: 0.9)
+          .stroke(style: StrokeStyle(lineWidth: 2, lineCap: CGLineCap.round))
+          .foregroundColor(index % 2 == 0 ? Color.red : Color.green)
+          .frame(width: 100, height: 100)
+        }
+        
+      }
+      .frame(width: 100, height: 100)
+  }
+  
 }
+
+#if DEBUG
 
 struct ExampleSwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
       ExampleSwiftUIView()
     }
 }
+
+#endif
