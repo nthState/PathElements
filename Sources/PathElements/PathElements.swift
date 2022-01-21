@@ -17,7 +17,7 @@ public extension Shape {
   
 }
 
-private struct PathContainer: Identifiable {
+internal struct PathContainer: Identifiable {
   let id: Int
   let lastPoint: CGPoint
   let element: Path.Element
@@ -26,7 +26,7 @@ private struct PathContainer: Identifiable {
 public struct PathElements<S, NewContent>: ViewModifier, ShapeStyle where S: Shape, NewContent: View {
  
   private let path: Path
-  private let innerContent: (Int, CGPoint, Path.Element) -> NewContent
+  internal let innerContent: (Int, CGPoint, Path.Element) -> NewContent
   
   public init(shape: S, @ViewBuilder innerContent: @escaping (Int, CGPoint, Path.Element) -> NewContent) {
     
@@ -45,7 +45,7 @@ public struct PathElements<S, NewContent>: ViewModifier, ShapeStyle where S: Sha
     }
   }
   
-  private func pathElements() -> [PathContainer] {
+  internal func pathElements() -> [PathContainer] {
     var elements: [PathContainer] = []
     var counter: Int = 0
     var lastPoint: CGPoint = .zero
