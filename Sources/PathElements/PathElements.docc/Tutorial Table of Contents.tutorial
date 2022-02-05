@@ -1,0 +1,12 @@
+@Tutorials(name: "aa") {
+    @Intro(title: "Guide to using Path Elements") {
+        
+    }
+    
+    @Chapter(name: "Getting Started with Path Elements") {
+
+        
+        @TutorialReference(tutorial: "doc:Getting-Started-with-PathElements")
+    }
+    
+}

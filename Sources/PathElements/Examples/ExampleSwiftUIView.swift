@@ -8,6 +8,7 @@
 //
 
 import SwiftUI
+import PathElements
 
 struct ExampleSwiftUIView {}
 

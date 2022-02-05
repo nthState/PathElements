@@ -1,13 +1,22 @@
-# ````
+# ``PathElements``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+A SwiftUI Package to let you process each element in a Shape
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+```
+import PathElements
+
+var body: some View {
+  Rectangle()
+    .elements { index, lastPoint, element in
+      ...
+    }
+}
+```
 
 ## Topics
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+### Group
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+- <doc:Getting-Started-with-PathElements>

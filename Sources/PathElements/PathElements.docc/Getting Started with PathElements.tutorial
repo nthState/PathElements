@@ -1,0 +1,51 @@
+@Tutorial() {
+  @Intro(title: "Getting Started with PathElements in SwiftUI") {
+    In this tutorial, I'll show you how to integrate Path Elements
+    into your SwiftUI project to paint each Path Element a different colour
+    
+  }
+  
+  @Section(title: "Start with a Rectangle") {
+    @ContentAndMedia {
+      Let's get started with a Rectangle
+
+    }
+    
+    @Steps {
+      @Step {
+        Start of with a simple view, this one displays a Rectangle with a red border
+        
+        @Code(name: "Rectangle.swift", file: "01_Elements.swift") {
+          @Image(source: "01_Elements.png", alt: "accessible description")
+        }
+      }
+      
+      @Step {
+        Import the ``PathElements`` Swift Package and add the ViewModifier.
+        
+        The parameters are, index of the element, the last point from the path, and the element itself
+        
+        @Code(name: "Rectangle.swift", file: "02_Elements.swift") {
+          
+        }
+      }
+      
+      @Step {
+        There are different types of path elements, we only want to operate on the .line elements
+        in this example, so we use `if case let` to check the type matches
+        
+        @Code(name: "Rectangle.swift", file: "03_Elements.swift") {
+          
+        }
+      }
+      
+      @Step {
+        Given the parameters, we have enough information to draw a new line, and stroke it with a new colour.
+        
+        @Code(name: "Rectangle.swift", file: "04_Elements.swift") {
+          @Image(source: "04_Elements.png", alt: "accessible description")
+        }
+      }
+    }
+  }
+}
