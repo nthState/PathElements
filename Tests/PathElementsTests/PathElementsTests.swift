@@ -4,7 +4,7 @@
 //
 //  Copyright © 2022 Chris Davis, https://www.nthState.com
 //
-//  See https://github.com/nthState/PathElements/blob/master/LICENSE for license information.
+//  See https://github.com/nthState/PathElements/blob/main/LICENSE for license information.
 //
 
 
